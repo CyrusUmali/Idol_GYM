@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./alp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <link rel="stylesheet" href="./resources/css/contactUs.css">
+
+    <script src="./js/prod-search.js"></script>
+    <script src="./js/user-chat.js"></script>
+
+    <script src="./js/category.js"></script>
+
+
+
+
+
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+
+    <div id="menu"></div>
+
+
+    <div class="pop-up-overlay hide ">
+
+        <div class="pop-up-sucess hide  ">
+
+            <div class="content">
+
+                <i class="fas fa-check"></i>
+
+                <h2>Thank you!</h2>
+                <label for="">Your message has been Sent</label>
+                <button onclick="successOkClick(event)">Ok</button>
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="pop-up-failed hide   ">
+
+            <div class="content">
+
+                <i class="fas fa-xmark"></i>
+
+                <h2>Error!</h2>
+                <label for="">Failed to Deliver Message</label>
+                <button onclick="failedOkClick(event)">Try Again</button>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="content-container">
+
+
+
+
+        <div class="contact-us-container">
+
+
+            <h1>Contact Us</h1>
+
+
+
+            <div class="info-portion">
+
+                <div class="upper-block">
+
+                    <div class="head">
+
+                        <i class="fas fa-phone"></i> <span class="label">Call to Us</span>
+
+
+
+                    </div>
+
+                    <div class="text-body">
+
+                        <p>We are available 24/7, 7 days a week.</p>
+                        <span>Phone:090909090909</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="lower-block">
+
+                    <div class="head">
+
+                        <i class="far fa-envelope"></i> <span class="label">Write To Us</span>
+
+
+                    </div>
+
+                    <div class="text-body">
+
+                        <p>Fill out our form and we will contact you within 24 hours.</p>
+                        <span>Email: alejandrapapa797@gmail.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <form class="form-portion">
+
+
+
+
+                <div class="upper-wrapper">
+
+                    <input type="text" title="Name" id="Name" placeholder="Your Name" maxlength="250" required>
+                    <input type="email" title="Email" id="Email" placeholder="Your Email" maxlength="250" required>
+                    <input type="number" title="Phone" id="Phone" placeholder="Phone Number" maxlength="250" required>
+
+
+                </div>
+
+                <div class="message-wrapper">
+
+                    <textarea required maxlength="250" id="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+
+                </div>
+
+                <div class="lower-wrapper">
+
+                    <button type="" onclick="submitMessageClick(event)">Send Message</button>
+
+                </div>
+
+
+
+            </form>
+
+
+
+
+        </div>
+
+        <!-- <div class="visit-page-container">
+
+            <span>
+                STAY UPTO DATE ABOUT OUR LATEST OFFERS
+            </span>
+
+            <img src="./resources/alp-shop-logo.jpg" alt="">
+
+            <button onclick="visitFbclick(event)">
+                Visit Our Facebook Page
+            </button>
+
+        </div> -->
+
+
+
+
+
+    </div>
+
+    <div>
+
+    </div>
+    <div id="user-chat"> </div>
+    <div id="services"></div>
+    <div id="site-footer"></div>
+
+
+    <script>
+
+
+    </script>
+ 
+ 
+
+    <script>
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+  
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+ 
+ 
+    </script>
+
+</body>
+
+</html>

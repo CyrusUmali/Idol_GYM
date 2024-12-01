@@ -1,0 +1,1325 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/prod-search.js"></script>
+    <script src="./js/user-chat.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      
+    <link rel="stylesheet" href="./resources/css/login.css"> 
+    <link rel="stylesheet" href="./alp.css">
+ 
+
+
+    <style>
+        .featured-products-container .product-wrapper {
+            display: flex;
+            justify-content: center;
+            padding-right: unset !important;
+            flex-direction: row;
+            width: 100% !important;
+            flex-wrap: wrap !important;
+            gap: 30px;
+            row-gap: 50px !important;
+            margin-bottom: 80px;
+            margin-top: 30px !important;
+
+
+        }
+
+        .featured-products-container .product .black {
+
+            bottom: 87px !important;
+
+        }
+    </style>
+
+
+
+
+
+
+
+ 
+</head>
+
+<body class="main-container">
+
+    <nav id="nav">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="./alp.css">
+
+    <style>
+
+
+    </style>
+
+
+
+
+
+    <div class="nav-container">
+ 
+
+        <div class="menu-btn-container">
+            <i onclick="menuClick()" class="fas fa-bars"></i>
+
+
+        </div>
+
+        <div class="shop-name-container">
+
+            <a href="./index.html">
+                <span>
+                    <!-- <img src="./resources/idolfitness.png" alt=""> -->
+                    <!-- ALP SHOP -->
+                    IDOL GYM
+                </span></a>
+
+        </div>
+
+        <div class="nav-search">
+
+
+            <div class="search-bar">
+
+                <input type="text" id="prod-search-bar" title="search-bar" onclick="searchBarClick(event)" oninput="prodSearchBarInput(event)" autocomplete="off">
+                <i class="fas fa-search"></i>
+
+            </div>
+
+            <div class="search-results">
+
+                <ul>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="actions-container">
+            <i class="fas fa-search" id="mobile-search"></i>
+            <a href="./login.html" class="user"> <i class="bx bx-user"></i></a>
+            <a href="./cart.html" class="cart"> <i class="bx bx-cart"></i></a>
+
+            <a class="admin" onclick="chatClick(event)">
+                <i class="bx bx-bell">
+                    <span class="message-notif">0</span>
+
+                </i></a>
+
+        </div>
+
+    </div>
+
+    <div class="sub-nav-container">
+
+        <ul>
+            <!-- <li id="categoryNav" onmouseenter="categHover()" class="underline-hover-animation">
+
+                Category
+            </li> -->
+
+            <li class="underline-hover-animation" onclick="categLabelClick(1)">
+                Supplements
+            </li>
+            <li class="underline-hover-animation" onclick="categLabelClick(2)">
+                Carbohydrate Sources
+            </li>
+
+            <li class="underline-hover-animation" onclick="categLabelClick(3)">
+                Protein Sources
+            </li>
+
+            <li class="underline-hover-animation">
+                <a href="./Faq.html"> Faq's</a>
+               
+            </li>
+
+            <li class="underline-hover-animation">
+                <a href="./contact-Us.html">    Contact Us</a>
+             
+            </li>
+
+            <li class="underline-hover-animation">
+                <a href="./about-us .html">
+                About
+                </a>
+               
+            </li>
+
+ 
+
+        </ul>
+
+     
+
+        <div class="categ-footer">
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+</nav>
+
+    <div id="menu">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./alp.css">
+
+
+
+
+
+    <div class="menu-container">
+
+        <header class="menu-header">
+            <div>
+                <i class="fas fa-x"></i> 
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </header>
+
+        <div class="menu-body">
+            <ul>
+                <li>
+                    <a href="./login.html">
+                        <div>
+
+                            <i class="fas fa-user"></i>
+                            <span>Login / Register</span>
+
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">New Arrivals</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Wishlist</a></li>
+                <li><a href="">About Us</a></li>
+            </ul>
+
+        </div>
+
+
+
+
+    </div>
+
+   
+
+
+
+
+</div>
+
+
+
+
+    <div class="filter-overlay hide">
+
+        <div class="filter-overlay-main show">
+
+            <div class="filter-overlay-header">
+
+                <h2>Filter</h2> <i onclick="filterXCLICK(event)" class="fas fa-times"></i>
+
+            </div>
+
+
+            <ul class="filter-method-list">
+
+
+ 
+
+                <li class="filter-list-item">
+
+
+                    <div class="main">
+                        <span> Price Range </span> <i class="fas fa-angle-down"></i>
+                    </div>
+
+
+                    <ul class="filter-sub-list">
+
+                        <div>
+                            <label for="min-price">Min Price:</label>
+                            <input type="number" id="min-price" name="min-price" min="0" step="10" value="0">
+
+
+                        </div>
+                        <div>
+                            <label for="max-price">Max Price:</label>
+                            <input type="number" id="max-price" name="max-price" min="0" step="10" value="2000">
+
+                        </div>
+                    </ul>
+
+                    <script>
+                        // Update selected price range when the input values change
+                        document.getElementById('min-price').addEventListener('input', updatePriceRange);
+                        document.getElementById('max-price').addEventListener('input', updatePriceRange);
+
+                        // Function to update the selected price range
+                        function updatePriceRange() {
+                            var minPrice = document.getElementById('min-price').value;
+                            var maxPrice = document.getElementById('max-price').value;
+                        }
+
+                        // Initial call to update the selected price range when the page loads
+                        updatePriceRange();
+                    </script>
+
+
+
+
+                </li>
+
+
+
+
+                <li class="filter-list-item">
+
+                    <div class="main">
+                        <span> Sort By </span> <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <ul class="filter-sub-list">
+                        <li data-value="1" class="active">Old - New</li>
+                        <li data-value="2">New - Old</li>
+                        <li data-value="3">A - Z</li>
+                        <li data-value="4">Z - A</li>
+                        <li data-value="5">Price L - H</li>
+                        <li data-value="6">Price H - L</li>
+                    </ul>
+
+
+
+
+                </li>
+
+                <li class="filter-list-item">
+
+
+                    <div class="main">
+                        <span> Availability </span> <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <ul class="filter-stock-list">
+                        <li data-value="1" class="active">In Stock</li>
+                        <li data-value="2">Out of Stock</li>
+
+
+                    </ul>
+
+
+
+
+
+                </li>
+
+
+                <li class="filter-list-item">
+
+
+                    <div class="main">
+                        <span> Rating </span> <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <ul class="filter-ratings-list">
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="5" id="rating-5">
+                        </li>
+
+
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="4" id="rating-4">
+                        </li>
+
+
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="3" id="rating-3">
+                        </li>
+
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="2" id="rating-2">
+                        </li>
+
+
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="1" id="rating-1">
+                        </li>
+
+                        <li>
+                            <div class="stars">
+                                <i class="fas fa-minus"></i>
+
+                            </div>
+                            <input type="radio" name="rating-filter" prod-rating="0" id="rating-0" checked="">
+                        </li>
+
+
+                    </ul>
+
+
+
+
+                </li>
+
+
+
+
+
+            </ul>
+
+
+
+
+            <div class="filter-overlay-footer">
+
+                <button onclick="applyFilterClick(event)">Apply Now</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="content-container">
+
+        <div class="home-page">
+
+
+
+            <div class="featured-products-container">
+
+                <h2 class="all-products-header">All Products</h2>
+
+                <div class="control-container">
+
+                    <div class="filter" onclick="filterClick(event)">
+
+
+                        <img width="24" height="24" src="https://img.icons8.com/ios/50/sorting-options--v1.png" alt="sorting-options--v1">
+
+
+                        <span>Filter</span>
+                    </div>
+
+
+
+                </div>
+
+                <div class="product-wrapper">
+
+                    
+                <div class="product show" product-id="91">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733016766/peanut_lft7jn.png" alt="Peanut"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Peanut</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 189.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="92">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733019579/wheyNBG_nj4wdg.png" alt="Whey Protein"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Whey Protein</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 299.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="93">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733018882/Screenshot_2024-12-01_100704-removebg-preview_1_gpl0vi.png" alt="Brown Rice"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Brown Rice</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 123.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="94">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733018528/porkSisig_j6g4us.png" alt="Sisig RIce"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Sisig RIce</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 99.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="95">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733018530/banana_yvkndq.webp" alt="Banana"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Banana</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 123.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="96">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733018529/soyamilk_hlrimx.png" alt="Soya Milk"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Soya Milk</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 123.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="97">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733018867/creatine-removebg-preview_nqbpwd.png" alt="Creatine"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Creatine</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 123.00</span>
+                    </div>
+                </div>
+            
+                <div class="product show" product-id="98">
+                    <img src="https://res.cloudinary.com/dk41ykxsq/image/upload/v1733016768/egg_ywqlze.png" alt="Egg"> 
+                    <span class="black">Quick View</span>
+                    <div class="desc">
+                        <p>Egg</p>
+                        <span class="cost"><i class="fas fa-peseta-sign"></i> 12.00</span>
+                    </div>
+                </div>
+            
+
+
+                </div>
+
+
+
+            </div>
+
+            <!-- <div class="product-category">
+
+
+
+                <div class="product-wrapper">
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Tops</button>
+
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Bottoms</button>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Dresses</button>
+                    </div>
+
+                    <div class="product">
+                        <img src="" alt="">
+                        <button>Jackets</button>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div> -->
+
+            <!-- <div class="page-control">
+
+                <ul>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">...</a></li>
+                    <li><a href="">10</a></li>
+                    <li><a href=""><i class="fas fa-angle-right"></i></a></li>
+                </ul>
+
+            </div> -->
+
+
+        </div>
+    </div>
+
+
+    <div id="user-chat">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+    <div class="user-chat-container hide ">
+
+
+        <div class="header">
+
+            <img onclick="testClick(event)" src="./resources/alp-shop-logo.jpg" class="custumer-img" alt="">
+            <span id="customerName">ALP SHOP</span>
+
+            <i class="fas fa-angle-down" id="chatExpand" onclick="chatExpandClick(event)"></i>
+
+
+
+        </div>
+
+        <div class="chatbox-body hide">
+
+            <ul>
+                <li class="message-row-admin">
+
+                    <span>12:30Pm Monday</span>
+
+                    <div class="message-text">
+                        Lorem ipsum d t. Vero, quasi! Dolor placeat modi sequi vel perferendis. Dicta illo qui consec rnatur.
+
+                    </div>
+
+                    <div></div>
+
+                </li>
+
+                <li class="message-row-user">
+
+                    <span>12:30Pm Monday</span>
+
+                    <div class="message-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, quasi! Dolor placeat modi sequi vel perferendis. Dicta illo qui consectetur aut dolor commodi. Molestiae cumque rem facere distinctio numquam aspernatur.
+
+                    </div>
+
+                    <div></div>
+
+                </li>
+
+                <li class="message-row-admin">
+
+                    <span>12:30Pm Monday</span>
+
+                    <div class="message-text">
+                        Lorem ipsum d t. Vero, quasi! Dolor placeat modi sequi vel perferendis. Dicta illo qui consec rnatur.
+
+                    </div>
+
+                    <div></div>
+
+                </li>
+
+                <li class="message-row-user">
+
+                    <span>12:30Pm Monday</span>
+
+                    <div class="message-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, quasi! Dolor placeat modi sequi vel perferendis. Dicta illo qui consectetur aut dolor commodi. Molestiae cumque rem facere distinctio numquam aspernatur.
+
+                    </div>
+
+                    <div></div>
+
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="chatbox-body-noAuth  ">
+
+          
+        
+ 
+            <button class="userChatSignIn" onclick="userChatSignInClick(event)">
+                Login / Signup</button>
+
+        </div>
+
+        <div class="footer hide">
+
+            <input type="text" name="" id="messageInput" maxlength="495" placeholder="Type Your Message Here" onkeypress="submitMessage(event)">
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+    <div id="services">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+
+
+
+
+    <div class="content-container">
+
+
+        <div class="service-header">
+
+        <h1>Upgrade Your Performance</h1>
+        <h4>Dive into the World of Premium Gym Supplements!</h4>
+
+        </div>
+
+
+        <div class="services-container">
+
+            <div class="item">
+                <img src="./resources/discount-icon-png-22.jpg" alt="">
+                <label for="">Limited Time Offer: Save Big</label>
+            </div>
+            <div class="item">
+                <img src="./resources/cashOD.webp" alt="">
+                <label for="">Pay Later</label>
+            </div>
+
+
+            <div class="item">
+
+                <img src="./resources/meetUp.png" alt="">
+                <label for="">In-Person Exchange</label>
+            </div>
+
+            <div class="item">
+                <img width="80" height="80" src="https://img.icons8.com/dotty/80/checkout.png" alt="checkout">
+                <label for=""> Quick Checkout</label>
+            </div>
+
+            <div class="item">
+
+                <img width="64" height="64" src="https://img.icons8.com/pastel-glyph/64/send-package.png" alt="send-package">
+                <label for="">Shipping News</label>
+
+            </div>
+
+            <div class="item">
+                <img width="100" height="100" src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="shopping-bag--v1">
+                <label for="">Exclusive Deals For You</label>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+    <div id="site-footer">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .visit-page-container {
+            background-color: black;
+            /* width: 900px; */
+            width: 60%;
+            border-radius: 15px;
+            color: white;
+            padding: 15px 30px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 24px -1px,
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            margin-top: 50px;
+
+
+
+        }
+
+        .visit-page-container span {
+            font-size: 30px;
+            width: 40%;
+            color: white;
+            font-weight: 600;
+        }
+
+        .visit-page-container button {
+            all: unset;
+            border-radius: 18px;
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            font-weight: 600;
+            height: 40px;
+            background-color: white;
+            padding: 0px 12px;
+            font-size: 12px;
+            cursor: pointer;
+
+        }
+
+        .visit-page-container button:hover {
+
+            background-color: whitesmoke
+        }
+
+        .visit-page-container img {
+
+            position: relative;
+            height: 120px;
+            width: 120px;
+
+            /* height: 100%;
+    width: 100%;  */
+            /* left: 10%; */
+            object-fit: contain;
+        }
+    </style>
+
+
+
+
+
+
+
+
+    <div class="content-container">
+
+
+        <div class="visit-page-container">
+
+            <span>
+                STAY UPTO DATE ABOUT OUR LATEST OFFERS
+            </span>
+
+            <img src="./resources/idolfitness.png" alt="">
+
+            <button onclick="visitFbclick(event)">
+                <a href="https://www.facebook.com/profile.php?id=100063693235245"></a> Visit Our Facebook Page
+            </button>
+
+        </div>
+
+        <div class="site-footer">
+
+            <div class="site-links">
+
+                <div>
+                    <span class="toggle-subnav" onclick="toggleSubNav(this)">
+                        <b>Account</b> <i class="fas fa-angle-down"></i>
+                    </span>
+
+
+
+                    <ul class="sub-nav">
+                        <li><a href="./login.html"> My Account </a> </li>
+                        <li><a href="./login.html">Login / Sign up </a> </li>
+                        <li><a href="./cart.html">Cart </a> </li>
+                        <li><a href="./login.html">Wishlist </a> </li>
+
+
+                    </ul>
+                </div>
+
+                <div>
+                    <span class="toggle-subnav" onclick="toggleSubNav(this)">
+                        <b>Company</b> <i class="fas fa-angle-down"></i>
+                    </span>
+
+
+                    <ul class="sub-nav">
+                        <li> <a href="./about-us .html">About Us</a></li>
+                        <!-- <li><a href=""> Store List</a> </li> -->
+                        <li> <a href="./Privacy-Policy.html">Privacy Policy</a></li>
+                        <li><a href="./ToS.html"> Terms of Service</a> </li>
+                        <li> <a href="./Faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <span class="toggle-subnav" onclick="toggleSubNav(this)">
+                        <b>Connect </b> <i class="fas fa-angle-down"></i>
+                    </span>
+
+
+                    <ul class="sub-nav">
+                        <li> <a href="./contact-Us.html">Contact Us</a></li>
+                        <li> 038A Purok 1 Brgy San </li>
+                        <li> Agustin alaminos Laguna,</li>
+                        <li> Philippines </li>
+                    </ul>
+                </div>
+
+
+                <!-- <div>
+                    <span class="toggle-subnav" onclick="toggleSubNav(this)">
+                        <b>Get Help</b><i class="fas fa-angle-down"></i>
+                    </span> -->
+
+
+                <!-- <ul class="sub-nav"> -->
+                <!-- <li> <a href="./Faq.html">FAQs</a></li> -->
+                <!-- <li><a href=""> Size Guide</a> </li>
+                        <li> <a href="">Returns & Exchanges </a></li> -->
+                <!-- <li><a href=""> Payment Modes </a> </li> -->
+                <!-- </ul> -->
+                <!-- </div> -->
+
+
+
+
+            </div>
+
+            <!-- <div class="social-media-links">
+
+                <ul>
+                    <li> <i class="fab fa-facebook" id="fbIcon"><a href=""></a></i> </li>
+                    <li> <i class="fab fa-instagram" id="igIcon"><a href=""></a></i> </li>
+                    <li> <i class="fab fa-youtube" id="ytIcon"><a href=""></a></i> </li>
+                    <li> <i class="fab fa-twitter" id="twittIcon"><a href=""></a></i> </li>
+                    <li> <i class="fab fa-tiktok" id="tiktokIcon"><a href=""></a></i> </li>
+                </ul>
+
+            </div>   -->
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+ 
+
+
+
+ 
+    <!-- fetch pages -->
+    <script>
+       
+
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+
+               
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        
+    </script>
+
+
+    <script>
+        // Get all list items
+        const listItems = document.querySelectorAll('.filter-sub-list li');
+
+        // Add click event listener to each list item
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all list items
+                listItems.forEach(li => {
+                    li.classList.remove('active');
+                });
+
+                // Add active class to the clicked item
+                item.classList.add('active');
+
+
+            });
+        });
+
+        const stockItems = document.querySelectorAll('.filter-stock-list li');
+
+        // Add click event listener to each list item
+        stockItems.forEach(Sitem => {
+            Sitem.addEventListener('click', () => {
+                // Remove active class from all list items
+                stockItems.forEach(li => {
+                    li.classList.remove('active');
+                });
+
+                // Add active class to the clicked item
+                Sitem.classList.add('active');
+
+
+            });
+        });
+    </script>
+
+
+
+    <script src="./js/category.js"></script>
+
+
+
+
+    <script>
+        const filterOverlayElement = document.querySelector('.filter-overlay.hide');
+        const filterMainElement = document.querySelector('.filter-overlay-main');
+
+        function filterClick(event) {
+
+
+
+            filterOverlayElement.classList.remove('hide');
+
+            // Remove the 'show' class from the main content immediately
+
+
+            // Delay hiding the overlay
+            setTimeout(function() {
+                // Hide the overlay after a delay
+                filterMainElement.classList.add('show');
+            }, 200); // Adjust the delay time (in milliseconds) as needed
+
+
+
+
+        }
+
+        function filterXCLICK(event) {
+
+            // Remove the 'show' class from the main content immediately
+            filterMainElement.classList.remove('show');
+
+            // Delay hiding the overlay
+            setTimeout(function() {
+                // Hide the overlay after a delay
+                filterOverlayElement.classList.add('hide');
+            }, 200); // Adjust the delay time (in milliseconds) as needed
+
+        }
+
+        function applyFilterClick(event) {
+            const activeLi = document.querySelector('.filter-sub-list li.active');
+            const dataValue = activeLi.getAttribute('data-value');
+
+            const activeStock = document.querySelector('.filter-stock-list li.active');
+            const stockDataValue = activeStock.getAttribute('data-value');
+
+            console.log('data-value of Sort li:', dataValue);
+            console.log('data-value of Stock li:', stockDataValue);
+
+            const minPrice = document.getElementById('min-price');
+            console.log('minPrice: ', minPrice.value);
+
+            const maxPrice = document.getElementById('max-price');
+            console.log('minPrice: ', maxPrice.value);
+
+            const ratingRadios = document.querySelectorAll('.filter-ratings-list input[type="radio"]');
+            let checkedRating = null;
+            ratingRadios.forEach(radio => {
+                if (radio.checked) {
+                    checkedRating = radio.getAttribute('prod-rating');
+                }
+            });
+            console.log('Checked rating:', checkedRating);
+
+
+
+
+            // Make Axios request
+            axios.post('./php/site-scripts/filter-prod.php', {
+                    dataValue: dataValue,
+                    stockDataValue: stockDataValue,
+                    maxPrice: maxPrice.value,
+                    minPrice: minPrice.value,
+                    checkedRating: checkedRating
+                })
+                .then(response => {
+                    // Handle response if needed
+                    console.log('Response:', response.data);
+
+
+
+
+                    if (response.data.success) {
+
+
+                        const AllProducts = response.data.filteredProducts;
+
+
+                        localStorage.setItem('AllProducts', JSON.stringify(AllProducts));
+                        const productsContainer = document.querySelector('.product-wrapper'); // Assuming you have a container element with id "products-container"
+
+                        productsContainer.innerHTML = '';
+
+                        // Iterate over each product and generate HTML dynamically
+                        AllProducts.forEach(product => {
+                            const productHTML = `
+                     <div class="product" product-id="${product.product_id}"
+                          onmouseleave="hideBlack(event)"
+                          onmouseenter="showBlack(event)">
+                          <img src="${product.var_img}" alt="${product.name}"> 
+                           <span class="black">Quick View</span>
+                          <div class="desc">
+                         <p>${product.name}</p>
+                              <span class="cost"><i class="fas fa-peseta-sign"></i> ${product.variation_price}</span>
+             </div>
+           </div>
+         `;
+
+
+
+
+                            // Append the HTML to the products container
+                            productsContainer.innerHTML += productHTML;
+                            handleScroll();
+
+
+                        });
+                    } else {
+                        // Handle error if the request was not successful aha
+                        console.error("Error retrieving data from the server:", response.data);
+                    }
+
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error:', error);
+                });
+
+
+            filterXCLICK();
+        }
+
+
+        // Add event listeners for hover effect on products
+        const products = document.querySelectorAll('.featured-products-container .product');
+        products.forEach(product => {
+            product.addEventListener('mouseenter', () => {
+                const quickView = product.querySelector('.black');
+                quickView.classList.add('show');
+            });
+
+            product.addEventListener('mouseleave', () => {
+                const quickView = product.querySelector('.black');
+                quickView.classList.remove('show');
+            });
+        });
+
+
+
+        // Function to check if a certain portion of an element is in the viewport
+        function isPartiallyInViewport(element, threshold) {
+            var rect = element.getBoundingClientRect();
+            var height = window.innerHeight || document.documentElement.clientHeight;
+            return rect.bottom >= 0 && rect.top <= height * threshold;
+        }
+
+        // Function to handle scroll event
+        function handleScroll() {
+            var products = document.querySelectorAll('.product');
+            products.forEach(function(product) {
+                if (isPartiallyInViewport(product, 1)) {
+                    product.classList.add('show'); // Add the class to trigger the transition
+                }
+            });
+        }
+
+
+
+        function showBlack(event) {
+
+            const product = event.currentTarget; // Get the element being hovered over
+            const quickView = product.querySelector('.black');
+            quickView.classList.add('show');
+        }
+
+        function hideBlack(event) {
+
+            const product = event.currentTarget; // Get the element being hovered over
+            const quickView = product.querySelector('.black');
+            quickView.classList.remove('show');
+
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+            // Get all filter-list-item main
+            var filterItemHead = document.querySelectorAll('.filter-list-item .main');
+
+            // Attach click event listeners to each sub-nav header
+            filterItemHead.forEach(function(header) {
+                header.addEventListener('click', function() {
+
+
+                    // Toggle 'show' class for the sibling ul element
+                    var subNav = this.nextElementSibling;
+                    if (subNav && subNav.classList.contains('filter-sub-list')) {
+                        subNav.classList.toggle('show');
+                    }
+
+                    var stockSubNav = this.nextElementSibling;
+                    if (stockSubNav && stockSubNav.classList.contains('filter-stock-list')) {
+                        stockSubNav.classList.toggle('show');
+                    }
+
+
+                    // Rotate the angle-down icon
+                    var icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('rotate');
+                    }
+
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+            // Initial check on page load
+            handleScroll();
+
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScroll);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+
+
+</body></html>

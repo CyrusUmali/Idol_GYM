@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./alp.css">
+    <link rel="stylesheet" href="./resources/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="./js/auth-check.js"></script> -->
+    <script src="./js/category.js"></script>
+    <script src="./js/prod-search.js"></script>
+    <script src="./js/user-chat.js"></script>
+
+
+
+</head>
+
+<body class="main-container">
+
+    <nav id="nav"> </nav>
+
+
+    <div id="menu"></div>
+
+
+
+    <div class="content-container">
+
+
+
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <!-- <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="First Name" id="signUpFN" required />
+                    <input type="text" placeholder="Last Name" id="signUpLN" required />
+                    <input type="email" placeholder="Email" id="signUpEmail" required />
+                    <input type="password" placeholder="Password" id="signUpPass" required />
+                    <input type="password" placeholder="Confirm Password" id="signUpConfirmPass" required />
+
+                    <button onclick="signUpClick(event)">Sign Up</button>
+                    <span id="result"> </span>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" id="logInEmailInput" placeholder="Email" />
+                    <input type="password" id="logInPassInput" placeholder="Password" />
+
+                    <div class="actions-wrapper">
+                        <!-- <a href="#">Forgot your password?</a> -->
+
+                        <div>
+                            <input type="checkbox" id="rememberCheckbox"> <span>Remember Me?</span>
+                        </div>
+
+                    </div>
+
+                    <button onclick="logInClick(event)">Sign In</button>
+                    <span id="login-result"> </span>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div id="user-chat"> </div>
+    <div id="services"></div>
+    <div id="site-footer"></div>
+
+
+ 
+ 
+    <script>
+       
+        fetch('./site-footer.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('site-footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+        fetch('./service.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('services').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+
+        fetch('./nav.html')
+            .then(response => {
+                return response.text(); // Extract the HTML content as text
+            })
+            .then(data => {
+                // Insert the HTML content into the target element
+                document.getElementById('nav').innerHTML = data;
+
+                
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+ 
+    </script>
+
+</body>
+
+</html>
