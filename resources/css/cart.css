@@ -88,7 +88,7 @@ body {
 .cart-overlay .cart-overlay-body img {
     height: 135px;
     width: 90px;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
 }
 
 .cart-overlay .cart-overlay-body .cart-item {
@@ -296,7 +296,7 @@ form .cart-body .item {
 
 form .cart-body .product-img {
 
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     height: 225px;
     width: 150px;
 
@@ -686,7 +686,7 @@ form .cart-body .product-cost {
 
     .item-page-container .portion-1 .variation-img-container img {
 
-        background-color: #fdfdd6;
+        background-color: #f8f7fe;
         /* width: 33%; */
         /* width: 100%; */
         width: 256px;

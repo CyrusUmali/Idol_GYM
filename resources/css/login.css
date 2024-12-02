@@ -292,15 +292,15 @@ button.ghost {
 
 .overlay {
 
-	/* background-color: #fdfdd6; */
+	/* background-color: #f8f7fe; */
 	/* #ffffb8 */
-	background-color: #ffffb8
-	;
+	/* background-color: #ffffb8; */
+	
 	/* background: -webkit-linear-gradient(to right, #ffffb8, #333333);	 */
 
 	/* background-color: #fdf37a; */
-	/* background: -webkit-linear-gradient(to right, #000000, #333333);
-	background: linear-gradient(to right, #000000, #333333); */
+	background: -webkit-linear-gradient(to right, #000000, #333333);
+	background: linear-gradient(to right, #000000, #333333);
 
 	/* background: #FF416C; */
 	/* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
@@ -308,7 +308,7 @@ button.ghost {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: black;
+	color: white;
 	position: relative;
 	left: -100%;
 	height: 100%;

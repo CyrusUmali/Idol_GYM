@@ -39,7 +39,7 @@
 .details-form .shipping-form-container .form-group-1 input {
 
     all: unset;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     width: 216px;
     height: 40px;
     color: grey;
@@ -68,7 +68,7 @@
 .details-form .shipping-form-container .form-group-2 input {
 
     all: unset;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     width: 140px;
     height: 40px;
     color: grey;
@@ -80,7 +80,7 @@
 .details-form .shipping-form-container .no-group {
 
     all: unset;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     width: 445px;
     height: 40px;
     color: grey;
@@ -101,7 +101,7 @@
 .details-form .contact-form-container input {
 
     all: unset;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     width: 445px;
     height: 40px;
     color: grey;
@@ -196,7 +196,7 @@
 }
 
 .cart-content-container .items-container img {
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     height: 67px;
     width: 45px;
 

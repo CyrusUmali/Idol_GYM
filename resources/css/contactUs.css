@@ -102,7 +102,7 @@ h1 {
     all: unset;
     width: 215px;
     height: 30px;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
     color: gray;
     padding: 10px;
 }
@@ -112,7 +112,7 @@ h1 {
     width: 720px;
     padding: 10px;
     color: grey;
-    background-color: #fdfdd6;
+    background-color: #f8f7fe;
 
 }
 
@@ -190,7 +190,7 @@ h1 {
 
 .visit-page-container button:hover {
 
-    background-color: #fdfdd6
+    background-color: #f8f7fe
 }
 
 .visit-page-container img {
